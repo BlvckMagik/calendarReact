@@ -1,9 +1,10 @@
 import React from 'react';
 import Day from '../day/Day';
+import PropTypes from 'prop-types';
 
 import './week.scss';
 
-const Week = ({ weekDates, events }) => {
+const Week = ({ weekDates, events, fetchEvents }) => {
   return (
     <div className='calendar__week'>
       {weekDates.map(dayStart => {
@@ -20,6 +21,7 @@ const Week = ({ weekDates, events }) => {
 
         return (
           <Day
+            fetchEvents={fetchEvents}
             key={dayStart.getDate()}
             dataDay={dayStart.getDate()}
             dayEvents={dayEvents}
@@ -28,6 +30,16 @@ const Week = ({ weekDates, events }) => {
       })}
     </div>
   );
+};
+
+Week.propTypes = {
+  weekDates: PropTypes.array.isRequired,
+  events: PropTypes.array,
+  fetchEvents: PropTypes.func.isRequired,
+};
+
+Week.defaultProps = {
+  events: null,
 };
 
 export default Week;

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { months, getDisplayedMonth } from '../../utils/dateUtils.js';
+import { getDisplayedMonth } from '../../utils/dateUtils.js';
 
 import './header.scss';
 
@@ -40,6 +41,12 @@ const Header = ({
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  onModalChange: PropTypes.func.isRequired,
+  onTodayButtonClick: PropTypes.func.isRequired,
+  onWeekChange: PropTypes.func.isRequired,
 };
 
 export default Header;

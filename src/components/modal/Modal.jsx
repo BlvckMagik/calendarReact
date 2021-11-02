@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './modal.scss';
 
@@ -83,5 +84,10 @@ class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  onModalChange: PropTypes.func.isRequired,
+  onEventCreate: PropTypes.func.isRequired,
+};
 
 export default Modal;

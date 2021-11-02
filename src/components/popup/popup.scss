@@ -1,0 +1,16 @@
+.popup {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+
+  &__content {
+    padding: 2px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+}
+
+.delete-event-btn {
+  background-color: #fff;
+}

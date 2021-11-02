@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Header from './components/header/Header.jsx';
-import Calendar from './components/calendar/Calendar.jsx';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
+import Header from './components/header/Header.jsx';
+import Calendar from './components/calendar/Calendar.jsx';
 import {
   getWeekStartDate,
   generateWeekRange,
@@ -92,11 +93,19 @@ class App extends Component {
           onTodayButtonClick={this.handleTodayButton}
           onWeekChange={this.onWeekChange}
         />
-        <Calendar events={this.state.events} weekDates={weekDates} />
+        <Calendar
+          fetchEvents={this.fetchEvents}
+          events={this.state.events}
+          weekDates={weekDates}
+        />
         {modal}
       </>
     );
   }
 }
+
+App.propTypes = {
+  isModalOpen: PropTypes.bool,
+};
 
 export default App;
