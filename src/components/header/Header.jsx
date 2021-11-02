@@ -4,10 +4,15 @@ import { months, getDisplayedMonth } from '../../utils/dateUtils.js';
 
 import './header.scss';
 
-const Header = ({ onWeekChange, onTodayButtonClick, weekStartDate }) => {
+const Header = ({
+  onWeekChange,
+  onTodayButtonClick,
+  weekStartDate,
+  onModalChange,
+}) => {
   return (
     <header className='header'>
-      <button className='button create-event-btn'>
+      <button onClick={onModalChange} className='button create-event-btn'>
         <i className='fas fa-plus create-event-btn__icon'></i>Create
       </button>
       <div className='navigation'>
